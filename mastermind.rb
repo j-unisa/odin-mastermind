@@ -8,19 +8,19 @@ p secret_code # Delete before going live
 
 # Provide instructions to the user
 puts "Welcome to Mastermind!"
-puts "Try to guess the 4 digit code from numbers 1 to 6."
 
 10.times do
   # User (code breaker) makes guess
-  puts "Please enter your selection."
+  puts "Please enter your 4 digit guess from 1 to 6."
   user_guess = gets.chomp.to_i
 
   puts "User's guess is #{user_guess}" # Delete before going live
   puts "User's guess is a(n) #{user_guess.class}" # Delete before going live
 
+  # TODO: Add mechanism to compare 4 digit guess to secret_code
+  # TODO: State which numbers and positions are correct
+
   # Compare guess to code
-  # Provide feedback
-  # State which numbers and positions are correct
   if secret_code.include?(user_guess)
     puts "Correct!"
   else
