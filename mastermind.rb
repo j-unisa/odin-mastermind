@@ -12,16 +12,18 @@ puts "Welcome to Mastermind!"
 10.times do
   # User (code breaker) makes guess
   puts "Please enter your 4 digit guess from 1 to 6."
-  user_guess = gets.chomp.to_i
+  user_guess = gets.chomp.to_i.digits.reverse
 
   puts "User's guess is #{user_guess}" # Delete before going live
   puts "User's guess is a(n) #{user_guess.class}" # Delete before going live
 
   # TODO: Add mechanism to compare 4 digit guess to secret_code
+  matches = secret_code.zip(user_guess).filter_map { |a, b| a if a == b }
+  p matches
   # TODO: State which numbers and positions are correct
 
   # Compare guess to code
-  if secret_code.include?(user_guess)
+  if secret_code.include?(user_guess) # TODO: Fix this to compare each element
     puts "Correct!"
   else
     puts "Wrong!"
