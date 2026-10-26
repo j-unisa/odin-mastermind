@@ -18,7 +18,7 @@ puts "Welcome to Mastermind!"
   puts "User's guess is a(n) #{user_guess.class}" # Delete before going live
 
   # Isolate exact position matches (exact hits) to calculate feedback pegs
-  matches = secret_code.zip(user_guess).filter_map { |a, b| a if a == b }
+  matches = secret_code.zip(user_guess).map { |a, b| a == b ? a : "x" }
   p matches
   # TODO: State which numbers and positions are correct
 
