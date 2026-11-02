@@ -9,9 +9,9 @@ p secret_code # Delete before going live
 # Provide instructions to the user
 puts "Welcome to Mastermind!"
 
-10.times do
+10.downto(1) do |i|
   # User (code breaker) makes guess
-  puts "Please enter your 4 digit guess from 1 to 6."
+  puts "Please enter your 4 digit guess from 1 to 6.  You have #{i} attempts left"
   user_guess = gets.chomp.to_i.digits.reverse
 
   puts "User's guess is #{user_guess}" # Delete before going live
